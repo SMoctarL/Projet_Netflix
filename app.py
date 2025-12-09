@@ -64,9 +64,6 @@ annee_min, annee_max = st.sidebar.select_slider(
     value=(min(annees), max(annees))
 )
 
-
-st.success(f"📌 {len(df)} contenus affichés après filtrage")
-
 # ----------------------- 1. FILMS VS SERIES -----------------------
 st.header("🎬 1. Films vs Séries")
 
@@ -133,3 +130,13 @@ ajouts_par_annee = df_date["date_added"].dt.year.value_counts().sort_index()
 st.line_chart(ajouts_par_annee)
 
 # ----------------------- FIN -----------------------
+
+
+# Pour exécuter cette application, utilisez la commande suivante dans votre terminal :
+# python -m streamlit run "app.py"
+# Assurez-vous que le fichier 'netflix_titles.csv' est dans le même répertoire que ce script.
+# Vous pouvez installer Streamlit avec la commande : pip install streamlit
+# Vous pouvez également installer pandas avec la commande : pip install pandas
+# Si vous n'avez pas matplotlib et seaborn, vous pouvez les installer avec :
+# pip install matplotlib seaborn
+# Pour arrêter l'application, utilisez Ctrl+C dans le terminal.
